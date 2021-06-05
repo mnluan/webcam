@@ -1,18 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-	<title>webcam</title>
+    <meta charset="utf-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <title>webcam</title>
 </head>
 <body>
 
-	<div class="videocam"><video id = "video" playinline autoplay></video></div>
+    <div id="container">
 
-	<div class="snapshot_button"><button id="snapshot">Snapshot</button></div>
+        <video id="gum" playsinline autoplay muted></video>
+        <video id="recorded" playsinline loop></video>
 
-	<canvas id="canvas" width="640" height="480"></canvas>
-	<script src="script.js"></script>
+        <div>
+            <button id="start">Start camera</button>
+            <button id="record" disabled>Start Recording</button>
+            <button id="play" disabled>Play</button>
+            <button id="download" disabled>Download</button>
+        </div>
+
+        <div id="options">
+            Recording format: <select id="codecPreferences" disabled></select>
+            <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
+        </div>
+
+        <div>
+            <span id="errorMsg"></span>
+        </div>
+
+    </div>
+    
+    <div><button id="snapshot" disabled>Snapshot</button></div>
+
+    <canvas id="canvas" width="640" height="480"></canvas>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+<script src="script.js" async></script>
+
 </body>
 </html>
