@@ -1,12 +1,36 @@
-function videoCamera(){
+'uses strics';
 
-	const output = {video:{width:720}}
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const snapshot = document.getElementById('snapshot');
+const errorMSG = document.getElementById('errorMSG');
 
-	navigator.mediaDevices.getUserMedia({video:true, audio:true}).then(stream =>{
-		const videoElement = document.querySelector('#video')
-		videoElement.srcObject = stream
+const constraints = {
+	audio: true,
+	video:{
+		width:1280, height: 720
+	}
+};
 
-	}).catch(erro =>{console.log(error)})
+async function init(){
+	try{
+		const stream = await navigator.mediaDevices.getUserMedia(constraints);
+		handleSuccess(stream);
+	}
+	catch(e){
+		errorMsgElement.innerHTML = 'navigator.getUserMedia.error:${e.toString()}';
+
+	}
 }
 
-window.addEventListener("DOMContentLoaded", videoCamera)
+function handleSuccess(stream){
+	window.stream = stream;
+	video.srcObject = stream;
+}
+
+init();
+
+var context = canvas.getContext('2d');
+snapshot.addEventListener("click", function(){
+	context.drawImage(video,0,0,640,480)
+});
