@@ -14,15 +14,16 @@
         <video id="recorded" playsinline loop></video>
 
         <div>
-            <button id="start">Start camera</button>
-            <button id="record" disabled>Start Recording</button>
-            <button id="play" disabled>Play</button>
-            <button id="download" disabled>Download</button>
+            <button button class="btn" id="start">Start Camera</button>
+            <button button class="btn" id="record" disabled>Start Recording</button>
+            <button button class="btn" id="play" disabled>Play</button>
+            <button button class="btn" id="download" disabled>Download</button>
+            <button button class="btn" id="snapshot" disabled>Snapshot</button>
         </div>
 
         <div id="options">
-            Recording format: <select id="codecPreferences" disabled></select>
-            <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
+            Recording Format: <select id="codecPreferences" disabled></select>
+            <p>Echo Cancellation: <input type="checkbox" id="echoCancellation"></p>
         </div>
 
         <div>
@@ -30,8 +31,6 @@
         </div>
 
     </div>
-    
-    <div><button id="snapshot" disabled>Snapshot</button></div>
 
     <canvas id="canvas" width="640" height="480"></canvas>
 

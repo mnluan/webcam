@@ -1,3 +1,24 @@
 body{
     background-color : #202020;
+    color: white;
+    font-family: 'Helvetica', serif;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 26px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    border-radius: 36px;
+    width: 165px;
+    margin: 10px;
+}
+
+.btn:hover {
+    background-color: RoyalBlue;
 }
